@@ -2,6 +2,11 @@
 
 
 ## Research
+
+### Shape files for counties
+
+https://www.census.gov/geo/maps-data/data/cbf/cbf_counties.html
+
 ### External data sources:
 Census Data
 
