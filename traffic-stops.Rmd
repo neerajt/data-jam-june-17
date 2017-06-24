@@ -1,0 +1,68 @@
+---
+title: "Traffic-stops"
+author: "Neeraj"
+date: "6/24/2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
+library(leaflet)
+d <- read.csv('HARRIS_Co_only.csv', stringsAsFactors = FALSE)
+harris <- d
+#harris <- d[d$county_fips == 48201, ]
+harris_geo <- harris[!is.na(harris$lat) & !is.na(harris$lon), ]
+
+recent_harris_geo <- harris_geo[grepl("201.", harris_geo$stop_date), ]
+```
+
+## R Markdown
+
+
+```{r}
+
+barplot(table(d$driver_race_original, d$stop_outcome)[, "Citation"]/table(d$driver_race_original, d$stop_outcome)[, "Warning"])
+table(d$driver_race_original)
+table(d$driver_race_original, d$stop_outcome)
+barplot(table(d$driver_race_original, d$stop_outcome)[, "Citation"]/table(d$driver_race_original, d$stop_outcome)[, "Warning"])
+
+```
+
+
+# External variables
+Education
+
+Rental vs Owned
+
+Real estate value
+
+Income Prices
+
+Violent Crime
+
+Population density
+
+Ethnic distribution
+
+Railroad
+
+Traffic data
+
+
+# Variables in data set
+
+## Independent variables
+Time
+Day of week
+Season
+Year
+
+
+## Dependent variables
+Counts (Frequency)
+Outcome
+Search
+Violation-raw
+
+
